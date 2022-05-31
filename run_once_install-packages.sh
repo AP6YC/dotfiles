@@ -1,24 +1,24 @@
 #!/bin/sh
 # sudo apt install ripgrep
 
-"""
+: '
     already_installed
 
 Echos that a directory has already been installed.
 
 * `$1` - Directory that is already installed.
-"""
+'
 already_installed () {
     echo "------- SASHA'S CM - Already installed: $1"
 }
 
-"""
+: '
     try_install
 
 Tries to run the command if the target directory does not exist.
 * `$1` - Directory to check.
 * `$2` - String, command to be executed.
-"""
+'
 try_install () {
     if [ ! -d $1 ]
     then

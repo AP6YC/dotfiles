@@ -81,4 +81,4 @@ alias duda='du -sch .[^.]* *'
 alias dudad='du -hcs $(ls -A)'
 CUDNN="~/bin/cudnn"
 
-alias cm ~/bin/chezmoi
+alias cm="~/bin/chezmoi"

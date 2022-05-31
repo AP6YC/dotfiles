@@ -21,6 +21,14 @@ alias la='ls -lah'
 alias ir='source ~/.venv/ir/bin/activate'
 alias ranger='python ~/.local/bin/ranger/ranger.py'
 
+alias tmuxa='tmux new-session -ADs sasha'
+alias duda='du -sch .[^.]* *'
+alias dudad='du -hcs $(ls -A)'
+CUDNN="~/bin/cudnn"
+
+# Chezmoi command
+alias cm="$HOME/bin/chezmoi"
+
 # -----------------------------------------------------------------------------
 # VARIABLES
 # -----------------------------------------------------------------------------
@@ -74,11 +82,3 @@ clearlogs() {
     rm $OUT_DIR/*.out
     rm $ERR_DIR/*.err
 }
-
-
-alias tmuxa='tmux new-session -ADs sasha'
-alias duda='du -sch .[^.]* *'
-alias dudad='du -hcs $(ls -A)'
-CUDNN="~/bin/cudnn"
-
-alias cm="~/bin/chezmoi"

@@ -17,9 +17,14 @@
 # -----------------------------------------------------------------------------
 
 alias sme='squeue -u $USER'
-alias la='ls -lah'
 alias ir='source ~/.venv/ir/bin/activate'
 alias ranger='python ~/.local/bin/ranger/ranger.py'
+
+# ls aliases
+alias ll='ls -alF'
+# alias la='ls -A'
+alias la='ls -lah'
+alias l='ls -CF'
 
 alias tmuxa='tmux new-session -ADs sasha'
 alias duda='du -sch .[^.]* *'

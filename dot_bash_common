@@ -1,0 +1,4 @@
+alias tmuxa='tmux new-session -ADs sasha'
+alias duda='du -sch .[^.]* *'
+alias dudad='du -hcs $(ls -A)'
+CUDNN="~/bin/cudnn"

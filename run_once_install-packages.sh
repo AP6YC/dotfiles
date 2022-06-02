@@ -58,6 +58,10 @@ try_install () {
     fi
 }
 
+# Gotop
+# git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
+# /tmp/gotop/scripts/download.sh
+
 # TPM
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # git@github.com:tmux-plugins/tpm.git

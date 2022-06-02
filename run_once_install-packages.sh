@@ -29,20 +29,6 @@ success() {
 }
 
 : '
-    already_installed
-
-Echos that a directory has already been installed.
-
-* `$1` - Directory that is already installed.
-'
-already_installed () {
-    #echo "------- SASHA'S CM - Already installed: $1"
-    # echo "${COLOR_GREEN}------- SASHA'S CM ${COLOR_NONE}- Already installed: $1"
-    info "Already installed: $1"
-
-}
-
-: '
     try_install
 
 Tries to run the command if the target directory does not exist.
@@ -50,12 +36,19 @@ Tries to run the command if the target directory does not exist.
 * `$2` - String, command to be executed.
 '
 try_install () {
-    if [ ! -d $1 ]
+    if [ ! -d "$2" ]
     then
-        eval "$2"
+        eval "$1"
     else
-        already_installed "$1"
+        # already_installed "$2"
+        info "Already installed: $2"
     fi
+}
+
+# GIT PACKAGES
+git_install () {
+    LOCAL_COMMAND="git clone $1 $2"
+    try_install "$LOCAL_COMMAND" "$2"
 }
 
 # Gotop
@@ -64,25 +57,25 @@ try_install () {
 
 # TPM
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# git@github.com:tmux-plugins/tpm.git
 LOCAL_DIR=~/.tmux/plugins/tpm
-LOCAL_COMMAND="git clone https://github.com/tmux-plugins/tpm.git $LOCAL_DIR"
-try_install "$LOCAL_DIR" "$LOCAL_COMMAND"
+LOCAL_GIT=git@github.com:tmux-plugins/tpm.git
+git_install "$LOCAL_GIT" "$LOCAL_DIR"
+
 
 # Zsh Powerlevel10k
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 LOCAL_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-LOCAL_COMMAND="git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $LOCAL_DIR"
-try_install "$LOCAL_DIR" "$LOCAL_COMMAND"
+LOCAL_GIT=git@github.com:romkatv/powerlevel10k.git
+git_install "$LOCAL_GIT" "$LOCAL_DIR"
 
 # Zsh syntax highlighting
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 LOCAL_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-LOCAL_COMMAND="git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $LOCAL_DIR"
-try_install "$LOCAL_DIR" "$LOCAL_COMMAND"
+LOCAL_GIT=git@github.com:zsh-users/zsh-syntax-highlighting.git
+git_install "$LOCAL_GIT" "$LOCAL_DIR"
 
 # Zsh autosuggestions
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 LOCAL_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-LOCAL_COMMAND="git clone https://github.com/zsh-users/zsh-autosuggestions $LOCAL_DIR"
-try_install "$LOCAL_DIR" "$LOCAL_COMMAND"
+LOCAL_GIT=git@github.com:zsh-users/zsh-autosuggestions.git
+git_install "$LOCAL_GIT" "$LOCAL_DIR"

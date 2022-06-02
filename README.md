@@ -11,4 +11,5 @@ Personal dotfiles for terminal development and deployment.
 Deprecated:
 
 - Tmux theme: https://github.com/gpakosz/.tmux
-- Dotfiles: https://github.com/nicknisi/dotfiles
+- Dotfiles:
+    - https://github.com/nicknisi/dotfiles

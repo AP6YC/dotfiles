@@ -1,6 +1,10 @@
 #!/bin/sh
 # sudo apt install ripgrep
 
+# -----------------------------------------------------------------------------
+# COMMON CODE
+# -----------------------------------------------------------------------------
+
 #DOTFILES="$(pwd)"
 COLOR_GRAY="\033[1;38;5;243m"
 COLOR_BLUE="\033[1;34m"
@@ -9,6 +13,11 @@ COLOR_RED="\033[1;31m"
 COLOR_PURPLE="\033[1;35m"
 COLOR_YELLOW="\033[1;33m"
 COLOR_NONE="\033[0m"
+
+title() {
+    echo -e "\n${COLOR_PURPLE}$1${COLOR_NONE}"
+    echo -e "${COLOR_GRAY}==============================${COLOR_NONE}\n"
+}
 
 error() {
     printf "${COLOR_RED}Error: ${COLOR_NONE}$1\n"
@@ -51,31 +60,33 @@ git_install () {
     try_install "$LOCAL_COMMAND" "$2"
 }
 
-# Gotop
-# git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
-# /tmp/gotop/scripts/download.sh
+# -----------------------------------------------------------------------------
+# DIRECTORIES AND SOURCES
+# -----------------------------------------------------------------------------
 
-# TPM
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-LOCAL_DIR=~/.tmux/plugins/tpm
-LOCAL_GIT=git@github.com:tmux-plugins/tpm.git
-git_install "$LOCAL_GIT" "$LOCAL_DIR"
+# Git directories
+git_dirs=(
+    ~/.tmux/plugins/tpm
+    ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+)
 
+# Git repositories
+git_repos=(
+    git@github.com:tmux-plugins/tpm.git
+    git@github.com:romkatv/powerlevel10k.git
+    git@github.com:zsh-users/zsh-syntax-highlighting.git
+    git@github.com:zsh-users/zsh-autosuggestions.git
+)
 
-# Zsh Powerlevel10k
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-LOCAL_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-LOCAL_GIT=git@github.com:romkatv/powerlevel10k.git
-git_install "$LOCAL_GIT" "$LOCAL_DIR"
+# -----------------------------------------------------------------------------
+# INSTALLATION
+# -----------------------------------------------------------------------------
 
-# Zsh syntax highlighting
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-LOCAL_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-LOCAL_GIT=git@github.com:zsh-users/zsh-syntax-highlighting.git
-git_install "$LOCAL_GIT" "$LOCAL_DIR"
+title "Installing dotfile dependencies"
 
-# Zsh autosuggestions
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-LOCAL_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-LOCAL_GIT=git@github.com:zsh-users/zsh-autosuggestions.git
-git_install "$LOCAL_GIT" "$LOCAL_DIR"
+# Iterate over all git repos and dirs
+for i in ${!git_dirs[@]}; do
+    git_install "${git_repos[$i]}" "${git_dirs[$i]}"
+done

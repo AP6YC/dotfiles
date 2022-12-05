@@ -45,6 +45,9 @@ mkdir -p $OUT_DIR
 mkdir -p $ERR_DIR
 export SINGULARITY_CACHEDIR=/lustre/scratch/sap625/.singularity
 
+export VISUAL=nvim
+export EDITOR=nvim
+
 # -----------------------------------------------------------------------------
 # FUNCTIONS
 # -----------------------------------------------------------------------------

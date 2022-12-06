@@ -85,9 +85,9 @@ git_repos=(
 # -----------------------------------------------------------------------------
 
 # Install ZSH
-title "Installing ZSH"
+title "Installing oh-my-zsh"
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#try_install $HOME/.oh-my-zsh/ "sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)""
 
 title "Installing dotfile dependencies"
 

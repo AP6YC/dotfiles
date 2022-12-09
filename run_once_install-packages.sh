@@ -74,10 +74,10 @@ git_dirs=(
 
 # Git repositories
 git_repos=(
-    git@github.com:tmux-plugins/tpm.git
-    git@github.com:romkatv/powerlevel10k.git
-    git@github.com:zsh-users/zsh-syntax-highlighting.git
-    git@github.com:zsh-users/zsh-autosuggestions.git
+    https://github.com/tmux-plugins/tpm.git
+    https://github.com/romkatv/powerlevel10k.git
+    https://github.com/zsh-users/zsh-syntax-highlighting.git
+    https://github.com/zsh-users/zsh-autosuggestions.git
 )
 
 # -----------------------------------------------------------------------------

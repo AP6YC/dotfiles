@@ -1,6 +1,14 @@
 # dotfiles
 Personal dotfiles for terminal development and deployment.
 
+## Installation
+
+- apt:
+  - git zsh tmux
+- onmyzsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- Chezmoi: `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply AP6YC`
+
+
 ## References
 
 - TPM: https://github.com/tmux-plugins/tpm

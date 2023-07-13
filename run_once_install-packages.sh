@@ -5,6 +5,8 @@
 # COMMON CODE
 # -----------------------------------------------------------------------------
 
+CUSTOM_DIR=${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}
+
 #DOTFILES="$(pwd)"
 COLOR_GRAY="\033[1;38;5;243m"
 COLOR_BLUE="\033[1;34m"
@@ -67,9 +69,9 @@ git_install () {
 # Git directories
 git_dirs=(
     ~/.tmux/plugins/tpm
-    ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ${CUSTOM_DIR}/themes/powerlevel10k
+    ${CUSTOM_DIR}/plugins/zsh-syntax-highlighting
+    ${CUSTOM_DIR}/plugins/zsh-autosuggestions
 )
 
 # Git repositories

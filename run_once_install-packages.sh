@@ -8,6 +8,9 @@
 # CUSTOM_DIR=${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}
 CUSTOM_DIR = $ZSH_CUSTOM
 
+echo "ZSH custom dir is ${ZSH_CUSTOM}"
+echo "Local custom dir is ${CUSTOM_DIR}"
+
 #DOTFILES="$(pwd)"
 COLOR_GRAY="\033[1;38;5;243m"
 COLOR_BLUE="\033[1;34m"

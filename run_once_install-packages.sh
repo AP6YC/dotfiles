@@ -6,7 +6,7 @@
 # -----------------------------------------------------------------------------
 
 # CUSTOM_DIR=${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}
-CUSTOM_DIR = $HOME/.oh-my-zsh/custom
+CUSTOM_DIR=$HOME/.oh-my-zsh/custom
 
 echo "Local custom dir is ${CUSTOM_DIR}"
 

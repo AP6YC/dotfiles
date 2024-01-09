@@ -30,7 +30,7 @@ warning() {
     printf "${COLOR_YELLOW}Warning: ${COLOR_NONE}$1\n"
 }
 
-info() {
+install_info() {
     #echo -e "${COLOR_BLUE}Info: ${COLOR_NONE}$1"
     printf "${COLOR_BLUE}Info: ${COLOR_NONE}$1\n"
 }
@@ -49,10 +49,11 @@ Tries to run the command if the target directory does not exist.
 try_install () {
     if [ ! -d "$2" ]
     then
+        install_info "Trying to install $2 with $1"
         eval "$1"
     else
         # already_installed "$2"
-        info "Already installed: $2"
+        install_info "Already installed: $2"
     fi
 }
 

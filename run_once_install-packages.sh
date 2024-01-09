@@ -5,7 +5,8 @@
 # COMMON CODE
 # -----------------------------------------------------------------------------
 
-CUSTOM_DIR=${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}
+# CUSTOM_DIR=${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}
+CUSTOM_DIR = $ZSH_CUSTOM
 
 #DOTFILES="$(pwd)"
 COLOR_GRAY="\033[1;38;5;243m"

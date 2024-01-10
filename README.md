@@ -38,9 +38,18 @@ Personal dotfiles for terminal development and deployment.
     wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
     ```
 
+- Ranger:
+
+    ```sh
+    git clone git@github.com:ranger/ranger.git
+
+    ```
+
 ## Notes
 
-- Ranger: [https://github.com/ranger/ranger](https://github.com/ranger/ranger)
+[ranger]: https://github.com/ranger/ranger
+
+- Ranger: [ranger][ranger]
 
 ## References
 

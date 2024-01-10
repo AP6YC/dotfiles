@@ -51,11 +51,21 @@ Personal dotfiles for terminal development and deployment.
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
+- Bob:
+  - https://github.com/MordechaiHadad/bob
+
+  ```sh
+  cargo install --git https://github.com/MordechaiHadad/bob.git
+  export PATH=/home/sap625/.local/share/bob/nvim-bin:$PATH
+  ```
+
 ## Notes
 
 [ranger]: https://github.com/ranger/ranger
+[bob]: https://github.com/MordechaiHadad/bob
 
-- Ranger: [ranger][ranger]
+- [Ranger][ranger]
+- [Bob][bob]
 
 ## References
 

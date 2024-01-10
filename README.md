@@ -45,6 +45,12 @@ Personal dotfiles for terminal development and deployment.
 
     ```
 
+- Rustup:
+
+  ```sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+
 ## Notes
 
 [ranger]: https://github.com/ranger/ranger
